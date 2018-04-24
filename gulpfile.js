@@ -17,6 +17,9 @@ gulp.task('watch', () => {
     gulp.watch(['./src/pug/**'], () => {
         gulp.start(['pug']);
     });
+    gulp.watch(['./src/js/**'], () => {
+        gulp.start(['webpack']);
+    });
 });
 
 //ブラウザ表示

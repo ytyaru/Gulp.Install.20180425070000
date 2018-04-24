@@ -11,4 +11,7 @@ npm i -D gulp-plumber
 npm i -D gulp-notify
 npm i -D browser-sync
 
+npm i -D webpack
+npm i -D webpack-stream
+
 . ./init_project.sh
