@@ -13,5 +13,10 @@ npm i -D browser-sync
 
 npm i -D webpack
 npm i -D webpack-stream
+npm i -D gulp-babel
+npm i -D babel
+npm i -D babel-env
+npm i -D babel-polyfill
+npm i -D babel-preset-env
 
 . ./init_project.sh

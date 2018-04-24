@@ -74,6 +74,13 @@ gulp.task('webpack', () => {
         .pipe(gulp.dest("./dst/js"));
 });
 
+// babel
+gulp.task('babel', function () {
+    gulp.src('./src/js/**/*.js')
+    .pipe(babel())
+    .pipe(gulp.dest('./dst/js'));
+});
+
 //ブラウザリロード処理
 gulp.task('reload', () => {
     browserSync.reload();
