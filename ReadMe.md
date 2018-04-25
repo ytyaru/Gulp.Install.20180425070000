@@ -18,6 +18,11 @@ ES6(webpack,babel)|js
 
 ```sh
 $ cd (このディレクトリ)
+$ npm i
+```
+または以下。
+```sh
+$ cd (このディレクトリ)
 $ ./install.sh
 ```
 
@@ -37,21 +42,12 @@ $ gulp
 * ビルド（ファイル結合, トランスパイル）
 * ブラウザ起動
 
-なお、pug,stylus,jsのソースコードが変更されるたびに自動でビルド＆ブラウザ更新される。
-
-## gulp
-
-```sh
-$ cd (このディレクトリ)
-$ gulp
-```
+なお、`./dst/`配下のpug,stylus,jsのソースコードが変更されるたびに自動でビルド＆ブラウザ更新される。詳細は[gulpfile.js](gulpfile.js)参照。
 
 ### トランスパイル
 
 * `./src/stylus/**/*.styl`→`./dst/css/*`
 * `./src/pug/**/*.pug`→`./*`
-
-詳細は[gulpfile.js](gulpfile.js)参照。
 
 ### 起動
 
@@ -92,7 +88,22 @@ vimでインデント設定してやらないとエラーになる。[※](memo/
                         * babel-polyfill 6.26.0
                         * babel-preset-env 1.6.1
 
+## node_modules/ にインストールするもの
 
+モジュール|説明
+----------|----
+gulp-stylus|stylus→css
+gulp-sass|sass→css
+gulp-pug|pug→html
+gulp-plumber|sassとpugの変換でエラーが出た場合の強制終了を防止
+gulp-notify|デスクトップ通知
+browser-sync|ブラウザの起動、ファイル変更時リロード
+webpack|JSファイル結合
+webpack-stream|gulpでwebpackを使うために必要
+gulp-babel|gulpでbabelを使うために必要
+babel|JSをES6からES5へトランスパイルする
+babel-preset-env|ブラウザやNode.jsに合わせてネイティブサポートしていない構文のみトランスパイルする。([将来2.0正式版になり`"useBuiltIns": "usage"できれば` babel-polyfill, babel-plugin-transform-runtime不要](https://qiita.com/shisama/items/88080011bbc69e3e620b))
+babel-polyfill|Promiseなどの機能が未実装なら穴埋めする
 
 # ライセンス
 
